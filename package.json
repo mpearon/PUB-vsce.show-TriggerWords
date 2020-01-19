@@ -10,8 +10,16 @@
 	"categories": [
 		"Other"
 	],
+	"files.associations": {
+        "*.log": "log"
+    },
+	"languages": [{
+        "id": "log",
+        "extensions": [ ".log" ]
+    }],
 	"activationEvents": [
-		"onCommand:extension.showTriggerWords"
+		"onCommand:extension.showTriggerWords",
+		"onLanguage:log"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
