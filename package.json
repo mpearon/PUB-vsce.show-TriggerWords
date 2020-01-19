@@ -4,6 +4,15 @@
 	"description": "Emphasize trigger words in files",
 	"version": "0.0.1",
 	"publisher": "MPearon",
+	"keywords": ["mpearon","trigger","words","format","log"],
+	"author": {
+		"name": "Matthew Pearon",
+		"url": "https://CL3VER.life/mpearon"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mpearon/PUB-vsce.show-TriggerWords"
+	},
 	"engines": {
 		"vscode": "^1.41.0"
 	},
