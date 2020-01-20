@@ -18,7 +18,7 @@ function activate(context) {
         var decorationOptions = [
             {
                 name: 'error',
-                expression: '^(error|fail(ure)?)',
+                expression: '(err(or)?|fail(ure)?|crit(ical)?)',
                 decoration: {
                     color: 'white',
                     backgroundColor: 'red',
@@ -27,7 +27,7 @@ function activate(context) {
             },
             {
                 name: 'warning',
-                expression: '^warn(ing)?',
+                expression: 'warn(ing)?',
                 decoration: {
                     color: "black",
                     backgroundColor: "orange",
@@ -36,7 +36,7 @@ function activate(context) {
             },
             {
                 name: 'information',
-                expression: '^info(rmation)?',
+                expression: 'info(rmation)?',
                 decoration: {
                     color: "white",
                     backgroundColor: "blue",
@@ -45,7 +45,7 @@ function activate(context) {
             },
             {
                 name: 'success',
-                expression: '^succe(ssful|eded|ss)',
+                expression: 'succe(ssful|eded|ss)',
                 decoration: {
                     color: "white",
                     backgroundColor: "green",
