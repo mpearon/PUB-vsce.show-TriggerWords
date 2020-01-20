@@ -18,7 +18,7 @@ function activate(context) {
         var decorationOptions = [
             {
                 name: 'error',
-                expression: '^(error|fail(ure)?)',
+                expression: '^(err(or)?|fail(ure)?|crit(ical)?)',
                 decoration: {
                     color: 'white',
                     backgroundColor: 'red',
