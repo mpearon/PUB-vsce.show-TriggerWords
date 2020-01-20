@@ -1,5 +1,5 @@
 # v0.1.5 - 2020-01-20
-- COrrected README and CHANGELOG formatting
+- Corrected README and CHANGELOG formatting
 
 # v0.1.4 - 2020-01-20
 - Adding MIT licensing information

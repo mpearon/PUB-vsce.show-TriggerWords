@@ -2,7 +2,7 @@
 	"name": "vsce-show-triggerwords",
 	"displayName": "Show Trigger Words",
 	"description": "Emphasize trigger words in files",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"publisher": "MPearon",
 	"keywords": ["mpearon","trigger","words","format","log"],
 	"author": {
