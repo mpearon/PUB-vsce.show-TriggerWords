@@ -3,10 +3,10 @@ This extention's purpose is to help emphasize user-specified "trigger words" in 
 
 # Features
 ## Highlighting
-- "Failure" and "Error" are highlighted red.
-- "Success" is higlighted green.
-- "Info" and "Information" are highlighted blue.
-- "Warn" and "Warning" are higlighted orage.
+- "Error", "Err", "Failure", "Fail", "Critical" and "Crit" are highlighted red.
+- "Warning" and "Warn" are higlighted orage.
+- "Information" and "Info" are highlighted blue.
+- "Success", "Successful" and "Succeeded" are higlighted green.
 ## Parsing
 - Not available for initial release.
 ## Future Features
