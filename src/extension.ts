@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
 		var decorationOptions = [
 			{
 				name: 'error',
-				expression: '^(err(or)?|fail(ure)?|crit(ical)?)',
+				expression: '(err(or)?|fail(ure)?|crit(ical)?)',
 				decoration: {
 					color: 'white',
 					backgroundColor: 'red',
@@ -33,7 +33,7 @@ export function activate(context: ExtensionContext) {
 			},
 			{
 				name: 'warning',
-				expression: '^warn(ing)?',
+				expression: 'warn(ing)?',
 				decoration: {
 					color: "black",
 					backgroundColor: "orange",
@@ -42,7 +42,7 @@ export function activate(context: ExtensionContext) {
 			},
 			{
 				name: 'information',
-				expression: '^info(rmation)?',
+				expression: 'info(rmation)?',
 				decoration: {
 					color: "white",
 					backgroundColor: "blue",
@@ -51,7 +51,7 @@ export function activate(context: ExtensionContext) {
 			},
 			{
 				name: 'success',
-				expression: '^succe(ssful|eded|ss)',
+				expression: 'succe(ssful|eded|ss)',
 				decoration: {
 					color: "white",
 					backgroundColor: "green",
