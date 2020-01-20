@@ -14,11 +14,16 @@ Not available for initial release.
 
 ## Future Features
 - Highlighting
-	- User-specified words
+	- User-specified words/RegEx
 	- User-specified colors
+	- Optional whole-line highlighting
+		- Entire line highlighted light
+		- Matched word highlighted dark
+	- Optional Gutter markers
+		- Color matched
 - Parsing
-	- Provide canned regex to detect date, level and message.
-	- Possibly a user supplied regex?
+	- Provide canned RegEx to detect date, level and message.
+	- Optional user-supplied RegEx
 
 # Extention Settings
 No configurable settings at this time.
