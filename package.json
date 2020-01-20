@@ -3,7 +3,7 @@
 	"displayName": "Show Trigger Words",
 	"description": "Emphasize trigger words in files",
 	"version": "0.1.1",
-	"publisher": "MPearon",
+	"publisher": "Matthew Pearon",
 	"keywords": ["mpearon","trigger","words","format","log"],
 	"author": {
 		"name": "Matthew Pearon",
