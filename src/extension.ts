@@ -25,7 +25,11 @@ export function activate(context: ExtensionContext) {
 			{
 				name: 'error',
 				expression: '(err(or)?|fail(ure)?|crit(ical)?)',
-				decoration: {
+				wholeLine: true,
+				lineDeocoration: {
+					backgroundColor: "lightred"
+				},
+				matchDecoration: {
 					color: 'white',
 					backgroundColor: 'red',
 					fontWeight: 'bold'
@@ -34,7 +38,11 @@ export function activate(context: ExtensionContext) {
 			{
 				name: 'warning',
 				expression: 'warn(ing)?',
-				decoration: {
+				wholeLine: true,
+				lineDeocoration: {
+					backgroundColor: "lightorange"
+				},
+				matchDecoration: {
 					color: "black",
 					backgroundColor: "orange",
 					fontWeight: "bold"
@@ -43,7 +51,11 @@ export function activate(context: ExtensionContext) {
 			{
 				name: 'information',
 				expression: 'info(rmation)?',
-				decoration: {
+				wholeLine: true,
+				lineDeocoration: {
+					backgroundColor: "lightblue"
+				},
+				matchDecoration: {
 					color: "white",
 					backgroundColor: "blue",
 					fontWeight: "bold"
@@ -52,7 +64,11 @@ export function activate(context: ExtensionContext) {
 			{
 				name: 'success',
 				expression: 'succe(ssful|eded|ss)',
-				decoration: {
+				wholeLine: true,
+				lineDeocoration: {
+					backgroundColor: "lightgreen"
+				},
+				matchDecoration: {
 					color: "white",
 					backgroundColor: "green",
 					fontWeight: "bold"
@@ -63,7 +79,7 @@ export function activate(context: ExtensionContext) {
 		// Loop through each decoration option
 		decorationOptions.forEach(option => {
 			console.log('Show-TriggerWords: Processing ' + option.name);
-			let optionDecoration = window.createTextEditorDecorationType(option.decoration);
+			let optionMatchDecoration = window.createTextEditorDecorationType(option.matchDecoration);
 			let optionRanges = [];
 			let optionMatch;
 			let optionExpression = new RegExp(option.expression, 'gim');
@@ -75,7 +91,7 @@ export function activate(context: ExtensionContext) {
 					optionRanges.push(optionRange);
 					continue;
 				};
-				window.activeTextEditor.setDecorations(optionDecoration, optionRanges);
+				window.activeTextEditor.setDecorations(optionMatchDecoration, optionRanges);
 			};
 		});
 	};
