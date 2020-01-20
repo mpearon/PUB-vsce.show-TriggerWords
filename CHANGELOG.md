@@ -1,3 +1,5 @@
+# v0.1.4 - 2020-01-20
+- Adding MIT licensing information
 # v0.1.3 - 2020-01-19
 - Reverted publisher name from 'Matthew Pearon' to 'MPearon'
 # v0.1.2 - 2020-01-19
