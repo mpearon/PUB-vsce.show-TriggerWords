@@ -1,3 +1,6 @@
+# v0.1.6 - 2020-01-20
+- Added new goals to README
+
 # v0.1.5 - 2020-01-20
 - Corrected README and CHANGELOG formatting
 
