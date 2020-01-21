@@ -1,3 +1,6 @@
+# v0.2.5 - 2020-01-20
+- Added badges to README
+
 # v0.2.4 - 2020-01-20
 - Adjusted branding
   - Icons
