@@ -1,17 +1,9 @@
+[![Badge for version for Visual Studio Code extension MPearon.vsce-show-triggerwords](https://vsmarketplacebadge.apphb.com/version/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords) [![Rating](https://vsmarketplacebadge.apphb.com/rating/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords) [![Installs](https://vsmarketplacebadge.apphb.com/installs-short/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords) [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords) [![Live Share](https://img.shields.io/badge/Live_Share-enabled-8F80CF.svg?color=darkred&style=flat&logo=visual-studio-code)](https://visualstudio.microsoft.com/services/live-share/?wt.mc_id=MPearon.vsce-show-triggerwords) [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=darkred&style=flat)](http://opensource.org/licenses/MIT)
+
 # Purpose
 This extension's purpose is to help emphasize user-specified "trigger words" in certain file types.
 
 # Features
-
-<section style='float: right; text-align: right;'>
-
-[![Badge for version for Visual Studio Code extension MPearon.vsce-show-triggerwords](https://vsmarketplacebadge.apphb.com/version/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords)</br>
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords)</br>
-[![Installs](https://vsmarketplacebadge.apphb.com/installs-short/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords) [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/MPearon.vsce-show-triggerwords.svg?color=darkred&style=flat)](https://marketplace.visualstudio.com/items?itemName=MPearon.vsce-show-triggerwords&wt.mc_id=MPearon.vsce-show-triggerwords)</br>
-[![Live Share](https://img.shields.io/badge/Live_Share-enabled-8F80CF.svg?color=darkred&style=flat&logo=visual-studio-code)](https://visualstudio.microsoft.com/services/live-share/?wt.mc_id=MPearon.vsce-show-triggerwords)</br>
-[![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?color=darkred&style=flat)](http://opensource.org/licenses/MIT)
-
-</section>
 
 ## Highlighting
 - "Error", "Err", "Failure", "Fail", "Critical" and "Crit" are highlighted red.
