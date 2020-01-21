@@ -1,3 +1,6 @@
+# v0.2.6 - 2020-01-20
+- Adjusted badge location in README
+
 # v0.2.5 - 2020-01-20
 - Added badges to README
 
