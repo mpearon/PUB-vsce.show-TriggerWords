@@ -14,6 +14,9 @@ export function activate(context: ExtensionContext) {
 		// No active edit is open
 		if (!window.activeTextEditor)
 			return;
+		if((window.activeTextEditor.document.languageId) !== 'log'){
+			return
+		}
 		// Display a StatusBar message
 		window.setStatusBarMessage('Show Trigger Words activated');
 
@@ -24,54 +27,50 @@ export function activate(context: ExtensionContext) {
 		var decorationOptions = [
 			{
 				name: 'error',
-				expression: '(err(or)?|fail(ure)?|crit(ical)?)',
-				wholeLine: true,
-				lineDeocoration: {
-					backgroundColor: "lightred"
+				expression: 'err(or)?|fail(ure)?|crit(ical)?',
+				lineDecoration: {
+					backgroundColor: '#FF000030'
 				},
-				matchDecoration: {
-					color: 'white',
-					backgroundColor: 'red',
-					fontWeight: 'bold'
+				wordDecoration: {
+					color: 'black',
+					fontWeight: 'bolder',
+					backgroundColor: '#FF0000'
 				}
 			},
 			{
 				name: 'warning',
 				expression: 'warn(ing)?',
-				wholeLine: true,
-				lineDeocoration: {
-					backgroundColor: "lightorange"
+				lineDecoration: {
+					backgroundColor: '#FFFF0030'
 				},
-				matchDecoration: {
-					color: "black",
-					backgroundColor: "orange",
-					fontWeight: "bold"
+				wordDecoration: {
+					color: 'black',
+					fontWeight: 'bolder',
+					backgroundColor: '#FFFF00'
 				}
 			},
 			{
 				name: 'information',
 				expression: 'info(rmation)?',
-				wholeLine: true,
-				lineDeocoration: {
-					backgroundColor: "lightblue"
+				lineDecoration: {
+					backgroundColor: '#007FFF30'
 				},
-				matchDecoration: {
-					color: "white",
-					backgroundColor: "blue",
-					fontWeight: "bold"
+				wordDecoration: {
+					color: 'black',
+					fontWeight: 'bolder',
+					backgroundColor: '#007FFF'
 				}
 			},
 			{
 				name: 'success',
 				expression: 'succe(ssful|eded|ss)',
-				wholeLine: true,
-				lineDeocoration: {
-					backgroundColor: "lightgreen"
+				lineDecoration: {
+					backgroundColor: '#00ff0030'
 				},
-				matchDecoration: {
-					color: "white",
-					backgroundColor: "green",
-					fontWeight: "bold"
+				wordDecoration: {
+					color: 'black',
+					fontWeight: "bolder",
+					backgroundColor: '#00ff00'
 				}
 			}
 		]
@@ -79,19 +78,36 @@ export function activate(context: ExtensionContext) {
 		// Loop through each decoration option
 		decorationOptions.forEach(option => {
 			console.log('Show-TriggerWords: Processing ' + option.name);
-			let optionMatchDecoration = window.createTextEditorDecorationType(option.matchDecoration);
-			let optionRanges = [];
-			let optionMatch;
-			let optionExpression = new RegExp(option.expression, 'gim');
+			let optionWordDecoration = window.createTextEditorDecorationType(option.wordDecoration);
+			let optionWordRanges = [];
+			let optionWord;
+			let optionLineDecoration = window.createTextEditorDecorationType(option.lineDecoration);
+			let optionLineRanges = [];
+			let optionLine;
+			let optionLineExpression = new RegExp(('.+(' + option.expression + ').+'),'gim');
+			let optionWordExpression = new RegExp(option.expression,'gim');
 			if (window.activeTextEditor) {
-				while (optionMatch = optionExpression.exec(editorText)) {
-					let optionStartIndex = window.activeTextEditor.document.positionAt(optionMatch.index);
-					let optionEndIndex = window.activeTextEditor.document.positionAt(optionMatch.index + optionMatch[0].length);
-					let optionRange = (new Range(optionStartIndex, optionEndIndex));
-					optionRanges.push(optionRange);
+				while (optionLine = optionLineExpression.exec(editorText)) {
+					// Higlight Line
+					let lineStart = window.activeTextEditor.document.positionAt(optionLine.index);
+					let lineStop = window.activeTextEditor.document.positionAt(optionLine.index + optionLine[0].length);
+					let lineRange = (new Range(lineStart, lineStop));
+					optionLineRanges.push(lineRange);
+					// Highlight Word
+					while (optionWord = optionWordExpression.exec(editorText)) {
+						let wordStart = window.activeTextEditor.document.positionAt(optionWord.index);
+						let wordStop = window.activeTextEditor.document.positionAt(optionWord.index + optionWord[0].length);
+						let wordRange = (new Range(wordStart, wordStop));
+						optionWordRanges.push(wordRange);
+						continue;
+						
+					};
 					continue;
 				};
-				window.activeTextEditor.setDecorations(optionMatchDecoration, optionRanges);
+				// Highlight the line
+				window.activeTextEditor.setDecorations(optionLineDecoration, optionLineRanges);
+				// Highlight the match
+				window.activeTextEditor.setDecorations(optionWordDecoration, optionWordRanges);
 			};
 		});
 	};

@@ -14,23 +14,25 @@ Not available for initial release.
 
 ## Future Features
 - Highlighting
-	- User-specified words/RegEx
-	- User-specified colors
-	- Optional whole-line highlighting
-		- Entire line highlighted light
-		- Matched word highlighted dark
-	- Optional Gutter markers
-		- Color matched
+	- [ ] User-specified words/RegEx
+	- [ ] User-specified colors
+	- [ ] Whole-line highlighting
+		- [x] Entire line highlighted light [25a691f](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/25a691fb9d97f55b2917196d0d742de1c41d46ef)
+		- [x] Matched word highlighted dark [25a691f](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/25a691fb9d97f55b2917196d0d742de1c41d46ef)
+		- [ ] Enable user toggle
+	- [ ] Optional Gutter markers
+		- [ ] Color matched
 - Parsing
-	- Provide canned RegEx to detect date, level and message.
-	- Optional user-supplied RegEx
+	- [ ] Provide canned RegEx to detect date, level and message.
+	- [ ] Optional user-supplied RegEx
 
 # Extention Settings
 No configurable settings at this time.
 
 # Known Issues
-No known issues as this time.
-TO report issues, pleas use [this link](https://github.com/mpearon/PUB-vsce.show-TriggerWords/issues).
+To report issues, use [this link](https://github.com/mpearon/PUB-vsce.show-TriggerWords/issues).
+- Comments are not ignored at this time.
+- Only engages when files with '.log' extension are opened.
 
 # Release Notes
 Reference [CHANGELOG](https://github.com/mpearon/PUB-vsce.show-TriggerWords/blob/master/CHANGELOG.md) for documentation about changes made to this repository
