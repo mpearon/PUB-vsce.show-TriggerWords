@@ -2,18 +2,26 @@
 	"name": "vsce-show-triggerwords",
 	"displayName": "Show Trigger Words",
 	"description": "Emphasize trigger words in files",
-	"version": "0.2.2",
+	"preview": false,
+	"version": "0.2.3",
 	"publisher": "MPearon",
 	"keywords": ["mpearon","trigger","words","format","log"],
 	"author": {
 		"name": "Matthew Pearon",
 		"url": "https://CL3VER.life/mpearon"
 	},
+	"homepage": "https://github.com/mpearon/PUB-vsce.show-TriggerWords/blob/master/README.md",
+	"icon": "resources/icon-256.png",
+	"galleryBanner": {
+		"color": "#520000",
+		"theme": "dark"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mpearon/PUB-vsce.show-TriggerWords"
 	},
 	"license": "MIT",
+	"extensionKind": [ "ui" ],
 	"engines": {
 		"vscode": "^1.41.0"
 	},

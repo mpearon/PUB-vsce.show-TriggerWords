@@ -1,3 +1,15 @@
+# v0.2.3 - 2020-01-20
+- Added branding
+  - Icons
+    - resources/icon-48.png
+    - resources/icon-256.png
+  - Gallery Info
+    - galleryBanner
+    - icon
+    - extensionKind
+    - preview
+- Corrected spelling in CHANGELOG
+
 # v0.2.2 - 2020-01-20
 - Corrected spelling issues in README
 
@@ -33,4 +45,4 @@
 - Added logic to loop through array of trigger words and thier associated decoration options
 
 # v0.0.0 - 2020-01-16
-- Intial commit
+- Initial commit
