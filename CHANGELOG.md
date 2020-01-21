@@ -1,3 +1,6 @@
+# v0.2.2 - 2020-01-20
+- Corrected spelling issues in README
+
 # v0.2.1 - 2020-01-20
 - Corrected formatting issue in README
 
