@@ -6,15 +6,15 @@ function activate(context) {
     // No editor is open, cancel load
     if (!vscode_1.window.activeTextEditor)
         return;
-    let updateDecorations = function (useHash = false) {
+    let updateDecorations = function (bypassLanguageCheck = false) {
         // No active edit is open
         if (!vscode_1.window.activeTextEditor)
             return;
-        if ((vscode_1.window.activeTextEditor.document.languageId) !== 'log') {
-            return;
+        if (bypassLanguageCheck == false) {
+            if ((vscode_1.window.activeTextEditor.document.languageId) !== 'log') {
+                return;
+            }
         }
-        // Display a StatusBar message
-        vscode_1.window.setStatusBarMessage('Show Trigger Words activated');
         // Read in document text
         let editorText = vscode_1.window.activeTextEditor.document.getText();
         // Set Decoration Options
@@ -118,7 +118,7 @@ function activate(context) {
     }, null, context.subscriptions);
     // The user calls the 'Show Trigger Words' command from the command palette
     let disposable = vscode_1.commands.registerCommand('extension.showTriggerWords', () => {
-        updateDecorations();
+        updateDecorations(true);
     });
     context.subscriptions.push(disposable);
 }
