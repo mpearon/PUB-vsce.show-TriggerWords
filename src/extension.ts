@@ -10,15 +10,15 @@ export function activate(context: ExtensionContext) {
 	if (!window.activeTextEditor)
 		return;
 
-	let updateDecorations = function (useHash = false) {
+	let updateDecorations = function (bypassLanguageCheck = false) {
 		// No active edit is open
 		if (!window.activeTextEditor)
 			return;
-		if((window.activeTextEditor.document.languageId) !== 'log'){
-			return
+		if( bypassLanguageCheck == false ){
+			if((window.activeTextEditor.document.languageId) !== 'log'){
+				return
+			}
 		}
-		// Display a StatusBar message
-		window.setStatusBarMessage('Show Trigger Words activated');
 
 		// Read in document text
 		let editorText = window.activeTextEditor.document.getText();
@@ -126,7 +126,7 @@ export function activate(context: ExtensionContext) {
 
 	// The user calls the 'Show Trigger Words' command from the command palette
 	let disposable = commands.registerCommand('extension.showTriggerWords', () => {
-		updateDecorations();
+		updateDecorations(true);
 	});
 	context.subscriptions.push(disposable);
 }
