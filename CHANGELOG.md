@@ -1,3 +1,13 @@
+# v0.2.8 - 2020-01-21
+- Added provisions to allow any file type to be highlighted via triggering 'Show Trigger Words' from Command Palette
+- Updated README
+  - Features
+    - Restructured to use sub-headers instead of bullets
+  - Known Issues
+    - Removed '.log' language restriction entry
+    - Added entry for auto-updating
+- Corrected spelling issue in CHANGELOG entry for v0.1.0
+
 # v0.2.7 - 2020-01-20
 - Corrected README formatting issue
 
@@ -59,7 +69,7 @@
 - Adjusted decorationOption RegEx entries to remove requirement that trigger word be first word on line
 
 # v0.1.0 - 2020-01-19
-- Added logic to loop through array of trigger words and thier associated decoration options
+- Added logic to loop through array of trigger words and their associated decoration options
 
 # v0.0.0 - 2020-01-16
 - Initial commit
