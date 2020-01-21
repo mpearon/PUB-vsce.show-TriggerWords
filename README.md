@@ -1,13 +1,13 @@
 # Purpose
-This extention's purpose is to help emphasize user-specified "trigger words" in certain file types.
+This extension's purpose is to help emphasize user-specified "trigger words" in certain file types.
 
 # Features
 
 ## Highlighting
 - "Error", "Err", "Failure", "Fail", "Critical" and "Crit" are highlighted red.
-- "Warning" and "Warn" are higlighted orage.
+- "Warning" and "Warn" are highlighted orange.
 - "Information" and "Info" are highlighted blue.
-- "Success", "Successful" and "Succeeded" are higlighted green.
+- "Success", "Successful" and "Succeeded" are highlighted green.
 
 ## Parsing
 Not available for initial release.
