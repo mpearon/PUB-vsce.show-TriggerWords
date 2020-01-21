@@ -1,3 +1,16 @@
+# v0.2.2 - 2020-01-20
+- Corrected spelling issues in README
+
+# v0.2.1 - 2020-01-20
+- Corrected formatting issue in README
+
+# v0.2.0 - 2020-01-20
+- Added Whole-line Highlighting
+- Added '.log' languageId restriction (temporary)
+- Updated README
+  - Updated to reflect complete goals
+  - Added known issues
+
 # v0.1.6 - 2020-01-20
 - Added new goals to README
 
