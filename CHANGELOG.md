@@ -1,3 +1,6 @@
+# v0.2.1 - 2020-01-20
+- Corrected formatting issue in README
+
 # v0.2.0 - 2020-01-20
 - Added Whole-line Highlighting
 - Added '.log' languageId restriction (temporary)
