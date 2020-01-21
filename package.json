@@ -3,7 +3,7 @@
 	"displayName": "Show Trigger Words",
 	"description": "Emphasize trigger words in files",
 	"preview": false,
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"publisher": "MPearon",
 	"keywords": ["mpearon","trigger","words","format","log"],
 	"author": {
@@ -11,7 +11,7 @@
 		"url": "https://CL3VER.life/mpearon"
 	},
 	"homepage": "https://github.com/mpearon/PUB-vsce.show-TriggerWords/blob/master/README.md",
-	"icon": "resources/icon-256.png",
+	"icon": "resources/altIcon-256.png",
 	"galleryBanner": {
 		"color": "#520000",
 		"theme": "dark"

@@ -1,3 +1,11 @@
+# v0.2.4 - 2020-01-20
+- Adjusted branding
+  - Icons
+    - resources/altIcon-48.png
+    - resources/altIcon-256.png
+  - Gallery Info
+    - icon
+
 # v0.2.3 - 2020-01-20
 - Added branding
   - Icons
