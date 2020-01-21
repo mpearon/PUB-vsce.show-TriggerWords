@@ -17,8 +17,8 @@ Not available for initial release.
 	- [ ] User-specified words/RegEx
 	- [ ] User-specified colors
 	- [ ] Whole-line highlighting
-		- [x] Entire line highlighted light [25a691f](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/25a691fb9d97f55b2917196d0d742de1c41d46ef)
-		- [x] Matched word highlighted dark [25a691f](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/25a691fb9d97f55b2917196d0d742de1c41d46ef)
+		- [x] Entire line highlighted light ([25a691f](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/25a691fb9d97f55b2917196d0d742de1c41d46ef))
+		- [x] Matched word highlighted dark ([25a691f](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/25a691fb9d97f55b2917196d0d742de1c41d46ef))
 		- [ ] Enable user toggle
 	- [ ] Optional Gutter markers
 		- [ ] Color matched
