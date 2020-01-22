@@ -1,3 +1,13 @@
+# v0.2.9 - 2020-01-21
+- Added provisions for live highlighting as the file is modified ([526004c](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/526004c0e225cf314656eb1264b8ea150455a642))
+- Prepared for user contributions
+- Updated README
+  - Features
+    - Added verbiage to 'Automatic and Manual Triggering' header about live highlighting
+    - Corrected color for 'Warning' under 'Highlighting Details' header
+  - Known Issues
+    - Removed entry for auto-updating
+
 # v0.2.8 - 2020-01-21
 - Added provisions to allow any file type to be highlighted via triggering 'Show Trigger Words' from Command Palette
 - Updated README
