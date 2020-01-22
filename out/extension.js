@@ -62,7 +62,7 @@ function activate(context) {
             // Update Highlight Line Range
             let optionLineRanges = [];
             let optionLine;
-            let optionLineExpression = new RegExp(('.+(' + option.expression + ').+'), 'gim');
+            let optionLineExpression = new RegExp(('(.+)?(' + option.expression + ')(.+)?'), 'gim');
             while (optionLine = optionLineExpression.exec(editorText)) {
                 let lineStart = vscode_1.window.activeTextEditor.document.positionAt(optionLine.index);
                 let lineStop = vscode_1.window.activeTextEditor.document.positionAt(optionLine.index + optionLine[0].length);
