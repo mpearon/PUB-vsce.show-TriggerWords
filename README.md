@@ -9,11 +9,11 @@ This extension's purpose is to help emphasize user-specified "trigger words" in 
 ### Whole-line Highlighting
 - If a trigger word is detected, the entire line is highlighted lightly, and the matched word is emphasized heavily.
 ### Automatic and Manual Triggering
-- Files with '.log' extension are automatically highlighted
+- Files with '.log' extension are automatically highlighted when the file is opened and "live" as the file is modified
 - Other files can be manually highlighted by triggering the 'Show Trigger Words' command from the Command Pallette
 ### Highlighting Details
 - "Error", "Err", "Failure", "Fail", "Critical" and "Crit" are highlighted red.
-- "Warning" and "Warn" are highlighted orange.
+- "Warning" and "Warn" are highlighted yellow.
 - "Information" and "Info" are highlighted blue.
 - "Success", "Successful" and "Succeeded" are highlighted green.
 
@@ -40,7 +40,6 @@ No configurable settings at this time.
 # Known Issues
 To report issues, use [this link](https://github.com/mpearon/PUB-vsce.show-TriggerWords/issues).
 - Comments are not ignored at this time.
-- Highlighting is not auto-updating
 
 # Release Notes
 Reference [CHANGELOG](https://github.com/mpearon/PUB-vsce.show-TriggerWords/blob/master/CHANGELOG.md) for documentation about changes made to this repository
