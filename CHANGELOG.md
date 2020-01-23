@@ -1,3 +1,6 @@
+# v0.2.11 - 2020-01-23
+- Updated package.json and package-lock.json to be npm-compliant
+
 # v0.2.10 - 2020-01-22
 - [Issue #8](#8): Removed requirement for there to characters proceeding or following the Trigger Word
 
