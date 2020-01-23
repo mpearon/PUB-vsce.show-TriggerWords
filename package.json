@@ -5,7 +5,13 @@
 	"preview": false,
 	"version": "0.2.10",
 	"publisher": "MPearon",
-	"keywords": ["mpearon","trigger","words","format","log"],
+	"keywords": [
+		"mpearon",
+		"trigger",
+		"words",
+		"format",
+		"log"
+	],
 	"author": {
 		"name": "Matthew Pearon",
 		"url": "https://CL3VER.life/mpearon"
@@ -21,7 +27,9 @@
 		"url": "https://github.com/mpearon/PUB-vsce.show-TriggerWords"
 	},
 	"license": "MIT",
-	"extensionKind": [ "ui" ],
+	"extensionKind": [
+		"ui"
+	],
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -29,12 +37,16 @@
 		"Formatters"
 	],
 	"files.associations": {
-        "*.log": "log"
-    },
-	"languages": [{
-        "id": "log",
-        "extensions": [ ".log" ]
-    }],
+		"*.log": "log"
+	},
+	"languages": [
+		{
+			"id": "log",
+			"extensions": [
+				".log"
+			]
+		}
+	],
 	"activationEvents": [
 		"onCommand:extension.showTriggerWords",
 		"onLanguage:log"
