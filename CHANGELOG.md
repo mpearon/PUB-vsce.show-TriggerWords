@@ -1,3 +1,6 @@
+# v0.2.10 - 2020-01-22
+- [Issue #1](#1): Removed requirement for there to characters proceeding or following the Trigger Word
+
 # v0.2.9 - 2020-01-21
 - Added provisions for live highlighting as the file is modified ([526004c](https://github.com/mpearon/PUB-vsce.show-TriggerWords/commit/526004c0e225cf314656eb1264b8ea150455a642))
 - Prepared for user contributions
