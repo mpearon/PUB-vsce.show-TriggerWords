@@ -1,3 +1,6 @@
+# v0.2.12 - 2020-02-12
+- Added provisions for contributions model
+
 # v0.2.11 - 2020-01-23
 - Updated package.json and package-lock.json to be npm-compliant
 
