@@ -3,7 +3,7 @@
 	"displayName": "Show Trigger Words",
 	"description": "Emphasize trigger words in files",
 	"preview": false,
-	"version": "0.2.11",
+	"version": "0.2.12",
 	"publisher": "MPearon",
 	"keywords": [
 		"mpearon",
@@ -58,7 +58,77 @@
 				"command": "extension.showTriggerWords",
 				"title": "Show Trigger Words"
 			}
-		]
+		],
+		"configuration":{
+			"title": "Show Trigger Words",
+			"properties":{
+				"vsce-show-triggerwords.languages.autoDetectLanguage":{
+					"type": "array",
+					"default": ["log"],
+					"description": "File extensions that should automatically enable highlighting"
+				},
+				"vsce-show-triggerwords.highlighting.match1.enabled":{
+					"type": "boolean",
+					"default": true,
+					"description": "Match 1 highlighting will be enabled"
+				},
+				"vsce-show-triggerwords.highlighting.match1.matchExpression":{
+					"type": "string",
+					"default": "err(or)?|fail(ure)?|crit(ical)?",
+					"description": "Match 1 Expression"
+				},
+				"vsce-show-triggerwords.highlighting.match1.matchColor":{
+					"type": "string",
+					"default": "#ff0000",
+					"description": "Match 1 hex color code"
+				},
+				"vsce-show-triggerwords.highlighting.match2.enabled":{
+					"type": "boolean",
+					"default": true,
+					"description": "Match 2 highlighting will be enabled"
+				},
+				"vsce-show-triggerwords.highlighting.match2.matchExpression":{
+					"type": "string",
+					"default": "info(rmation)?",
+					"description": "Match 2 Expression"
+				},
+				"vsce-show-triggerwords.highlighting.match2.matchColor":{
+					"type": "string",
+					"default": "#007fff",
+					"description": "Match 2 hex color code"
+				},
+				"vsce-show-triggerwords.highlighting.match3.enabled":{
+					"type": "boolean",
+					"default": true,
+					"description": "Match 3 highlighting will be enabled"
+				},
+				"vsce-show-triggerwords.highlighting.match3.matchExpression":{
+					"type": "string",
+					"default": "warn(ing)?",
+					"description": "Match 3 Expression"
+				},
+				"vsce-show-triggerwords.highlighting.match3.matchColor":{
+					"type": "string",
+					"default": "#ffff00",
+					"description": "Match 3 hex color code"
+				},
+				"vsce-show-triggerwords.highlighting.match4.enabled":{
+					"type": "boolean",
+					"default": true,
+					"description": "Match 4 highlighting will be enabled"
+				},
+				"vsce-show-triggerwords.highlighting.match4.matchExpression":{
+					"type": "string",
+					"default": "succe(ssful|eded|ss)",
+					"description": "Match 4 Expression"
+				},
+				"vsce-show-triggerwords.highlighting.match4.matchColor":{
+					"type": "string",
+					"default": "#00ff00",
+					"description": "Match 4 hex color code"
+				}
+			}
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

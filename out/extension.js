@@ -1,58 +1,87 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const vscode_1 = require("vscode");
-// Define the color options - will be moved to a separate file and be accessible via contributions 
-const color1Word = { /* red */ backgroundColor: '#ff0000', color: 'black', fontWeight: 'bolder' };
-const color1Line = { /* red */ backgroundColor: '#ff000030', isWholeLine: true };
-const color2Word = { /* blue */ backgroundColor: '#007fff', color: 'black', fontWeight: 'bolder' };
-const color2Line = { /* blue */ backgroundColor: '#007fff30', isWholeLine: true };
-const color3Word = { /* yellow */ backgroundColor: '#ffff00', color: 'black', fontWeight: 'bolder' };
-const color3Line = { /* yellow */ backgroundColor: '#ffff0030', isWholeLine: true };
-const color4Word = { /* green */ backgroundColor: '#00ff00', color: 'black', fontWeight: 'bolder' };
-const color4Line = { /* green */ backgroundColor: '#00ff0030', isWholeLine: true };
-// Build the decorationTypes
-const color1WordType = vscode_1.window.createTextEditorDecorationType(color1Word);
-const color1LineType = vscode_1.window.createTextEditorDecorationType(color1Line);
-const color2WordType = vscode_1.window.createTextEditorDecorationType(color2Word);
-const color2LineType = vscode_1.window.createTextEditorDecorationType(color2Line);
-const color3WordType = vscode_1.window.createTextEditorDecorationType(color3Word);
-const color3LineType = vscode_1.window.createTextEditorDecorationType(color3Line);
-const color4WordType = vscode_1.window.createTextEditorDecorationType(color4Word);
-const color4LineType = vscode_1.window.createTextEditorDecorationType(color4Line);
+function getColorSettings() {
+    // Define the color options - will be moved to a separate file and be accessible via contributions 
+    const color1Word = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.matchColor, color: 'black', fontWeight: 'bolder' };
+    const color1Line = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.matchColor + '30', isWholeLine: true };
+    const color2Word = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.matchColor, color: 'black', fontWeight: 'bolder' };
+    const color2Line = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.matchColor + '30', isWholeLine: true };
+    const color3Word = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.matchColor, color: 'black', fontWeight: 'bolder' };
+    const color3Line = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.matchColor + '30', isWholeLine: true };
+    const color4Word = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.matchColor, color: 'black', fontWeight: 'bolder' };
+    const color4Line = { backgroundColor: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.matchColor + '30', isWholeLine: true };
+    // Build the decorationTypes
+    const color1LineType = vscode_1.window.createTextEditorDecorationType(color1Line);
+    const color1WordType = vscode_1.window.createTextEditorDecorationType(color1Word);
+    const color2LineType = vscode_1.window.createTextEditorDecorationType(color2Line);
+    const color2WordType = vscode_1.window.createTextEditorDecorationType(color2Word);
+    const color3LineType = vscode_1.window.createTextEditorDecorationType(color3Line);
+    const color3WordType = vscode_1.window.createTextEditorDecorationType(color3Word);
+    const color4LineType = vscode_1.window.createTextEditorDecorationType(color4Line);
+    const color4WordType = vscode_1.window.createTextEditorDecorationType(color4Word);
+    return {
+        color1LineType,
+        color2LineType,
+        color3LineType,
+        color4LineType,
+        color1WordType,
+        color2WordType,
+        color3WordType,
+        color4WordType
+    };
+}
+exports.getColorSettings = getColorSettings;
+;
 function activate(context) {
+    let colors = getColorSettings();
     console.log('mpearon.vsce.show-triggerwords has been initialized');
     // No editor is open, cancel load
     if (!vscode_1.window.activeTextEditor)
         return;
+    function clearDecorations() {
+        colors.color1LineType.dispose();
+        colors.color1WordType.dispose();
+        colors.color2LineType.dispose();
+        colors.color2WordType.dispose();
+        colors.color3LineType.dispose();
+        colors.color3WordType.dispose();
+        colors.color4LineType.dispose();
+        colors.color4WordType.dispose();
+    }
     // Decoration update function
-    let updateDecorations = function (bypassLanguageCheck = false) {
+    let updateDecorations = function (bypassLanguageCheck = false, updateColors = false) {
         if (bypassLanguageCheck == false) {
             if ((vscode_1.window.activeTextEditor.document.languageId) !== 'log') {
                 return;
             }
+        }
+        if (updateColors === true) {
+            clearDecorations();
+            colors = getColorSettings();
         }
         // Read in document text
         let editorText = vscode_1.window.activeTextEditor.document.getText();
         // Define object per expression - will be moved to a separate file and be accessible via contributions
         var decorationOptions = [
             {
-                name: 'error',
-                expression: 'err(or)?|fail(ure)?|crit(ical)?',
+                name: 'match1',
+                expression: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.matchExpression,
                 decoration: 'color1'
             },
             {
-                name: 'information',
-                expression: 'info(rmation)?',
+                name: 'match2',
+                expression: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.matchExpression,
                 decoration: 'color2'
             },
             {
-                name: 'warning',
-                expression: 'warn(ing)?',
+                name: 'match3',
+                expression: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.matchExpression,
                 decoration: 'color3'
             },
             {
-                name: 'success',
-                expression: 'succe(ssful|eded|ss)',
+                name: 'match4',
+                expression: vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.matchExpression,
                 decoration: 'color4'
             }
         ];
@@ -87,26 +116,38 @@ function activate(context) {
             switch (option.decoration) {
                 case 'color1':
                     {
-                        vscode_1.window.activeTextEditor.setDecorations(color1LineType, optionLineRanges);
-                        vscode_1.window.activeTextEditor.setDecorations(color1WordType, optionWordRanges);
+                        if (vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.enabled === true) {
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color1LineType, optionLineRanges);
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color1WordType, optionWordRanges);
+                        }
+                        ;
                     }
                     ;
                 case 'color2':
                     {
-                        vscode_1.window.activeTextEditor.setDecorations(color2LineType, optionLineRanges);
-                        vscode_1.window.activeTextEditor.setDecorations(color2WordType, optionWordRanges);
+                        if (vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.enabled === true) {
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color2LineType, optionLineRanges);
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color2WordType, optionWordRanges);
+                        }
+                        ;
                     }
                     ;
                 case 'color3':
                     {
-                        vscode_1.window.activeTextEditor.setDecorations(color3LineType, optionLineRanges);
-                        vscode_1.window.activeTextEditor.setDecorations(color3WordType, optionWordRanges);
+                        if (vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.enabled === true) {
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color3LineType, optionLineRanges);
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color3WordType, optionWordRanges);
+                        }
+                        ;
                     }
                     ;
                 case 'color4':
                     {
-                        vscode_1.window.activeTextEditor.setDecorations(color4LineType, optionLineRanges);
-                        vscode_1.window.activeTextEditor.setDecorations(color4WordType, optionWordRanges);
+                        if (vscode_1.workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.enabled === true) {
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color4LineType, optionLineRanges);
+                            vscode_1.window.activeTextEditor.setDecorations(colors.color4WordType, optionWordRanges);
+                        }
+                        ;
                     }
                     ;
             }
@@ -127,7 +168,7 @@ function activate(context) {
     }
     // The user switched to another document
     vscode_1.window.onDidChangeVisibleTextEditors(function (editor) {
-        updateDecorations();
+        triggerUpdateDecorations();
     }, null, context.subscriptions);
     // Content of document changed
     vscode_1.workspace.onDidChangeTextDocument(function (event) {
@@ -136,6 +177,10 @@ function activate(context) {
             triggerUpdateDecorations();
         }
     }, null, context.subscriptions);
+    vscode_1.workspace.onDidChangeConfiguration(function () {
+        console.debug('Show-TriggerWords: Configuration Update Detected');
+        updateDecorations(false, true);
+    });
     // The user calls the 'Show Trigger Words' command from the command palette
     let disposable = vscode_1.commands.registerCommand('extension.showTriggerWords', () => {
         updateDecorations(true);
