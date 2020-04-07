@@ -1,3 +1,12 @@
+# v0.2.13 - 2020-04-07
+- Addressed minimist vulnerability
+  ```
+  npm install minimist
+  npm update
+  npm audit fix
+  ```
+- Set ```vscode.engine``` to ```^1.43.0``` 
+
 # v0.2.12 - 2020-02-12
 - Added provisions for contributions model
 
