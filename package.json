@@ -3,7 +3,7 @@
 	"displayName": "Show Trigger Words",
 	"description": "Emphasize trigger words in files",
 	"preview": false,
-	"version": "0.2.12",
+	"version": "0.2.13",
 	"publisher": "MPearon",
 	"keywords": [
 		"mpearon",
@@ -31,7 +31,7 @@
 		"ui"
 	],
 	"engines": {
-		"vscode": "^1.41.0"
+		"vscode": "^1.43.0"
 	},
 	"categories": [
 		"Formatters"
@@ -59,70 +59,72 @@
 				"title": "Show Trigger Words"
 			}
 		],
-		"configuration":{
+		"configuration": {
 			"title": "Show Trigger Words",
-			"properties":{
-				"vsce-show-triggerwords.languages.autoDetectLanguage":{
+			"properties": {
+				"vsce-show-triggerwords.languages.autoDetectLanguage": {
 					"type": "array",
-					"default": ["log"],
+					"default": [
+						"log"
+					],
 					"description": "File extensions that should automatically enable highlighting"
 				},
-				"vsce-show-triggerwords.highlighting.match1.enabled":{
+				"vsce-show-triggerwords.highlighting.match1.enabled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Match 1 highlighting will be enabled"
 				},
-				"vsce-show-triggerwords.highlighting.match1.matchExpression":{
+				"vsce-show-triggerwords.highlighting.match1.matchExpression": {
 					"type": "string",
 					"default": "err(or)?|fail(ure)?|crit(ical)?",
 					"description": "Match 1 Expression"
 				},
-				"vsce-show-triggerwords.highlighting.match1.matchColor":{
+				"vsce-show-triggerwords.highlighting.match1.matchColor": {
 					"type": "string",
 					"default": "#ff0000",
 					"description": "Match 1 hex color code"
 				},
-				"vsce-show-triggerwords.highlighting.match2.enabled":{
+				"vsce-show-triggerwords.highlighting.match2.enabled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Match 2 highlighting will be enabled"
 				},
-				"vsce-show-triggerwords.highlighting.match2.matchExpression":{
+				"vsce-show-triggerwords.highlighting.match2.matchExpression": {
 					"type": "string",
 					"default": "info(rmation)?",
 					"description": "Match 2 Expression"
 				},
-				"vsce-show-triggerwords.highlighting.match2.matchColor":{
+				"vsce-show-triggerwords.highlighting.match2.matchColor": {
 					"type": "string",
 					"default": "#007fff",
 					"description": "Match 2 hex color code"
 				},
-				"vsce-show-triggerwords.highlighting.match3.enabled":{
+				"vsce-show-triggerwords.highlighting.match3.enabled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Match 3 highlighting will be enabled"
 				},
-				"vsce-show-triggerwords.highlighting.match3.matchExpression":{
+				"vsce-show-triggerwords.highlighting.match3.matchExpression": {
 					"type": "string",
 					"default": "warn(ing)?",
 					"description": "Match 3 Expression"
 				},
-				"vsce-show-triggerwords.highlighting.match3.matchColor":{
+				"vsce-show-triggerwords.highlighting.match3.matchColor": {
 					"type": "string",
 					"default": "#ffff00",
 					"description": "Match 3 hex color code"
 				},
-				"vsce-show-triggerwords.highlighting.match4.enabled":{
+				"vsce-show-triggerwords.highlighting.match4.enabled": {
 					"type": "boolean",
 					"default": true,
 					"description": "Match 4 highlighting will be enabled"
 				},
-				"vsce-show-triggerwords.highlighting.match4.matchExpression":{
+				"vsce-show-triggerwords.highlighting.match4.matchExpression": {
 					"type": "string",
 					"default": "succe(ssful|eded|ss)",
 					"description": "Match 4 Expression"
 				},
-				"vsce-show-triggerwords.highlighting.match4.matchColor":{
+				"vsce-show-triggerwords.highlighting.match4.matchColor": {
 					"type": "string",
 					"default": "#00ff00",
 					"description": "Match 4 hex color code"
@@ -140,12 +142,13 @@
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.7",
-		"@types/node": "^12.11.7",
-		"@types/vscode": "^1.41.0",
+		"@types/node": "^12.12.34",
+		"@types/vscode": "^1.43.0",
 		"glob": "^7.1.5",
-		"mocha": "^6.2.2",
-		"typescript": "^3.6.4",
+		"minimist": "^1.2.5",
+		"mocha": "^6.2.3",
 		"tslint": "^5.20.0",
+		"typescript": "^3.8.3",
 		"vscode-test": "^1.2.2"
 	}
 }
