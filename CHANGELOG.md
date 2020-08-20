@@ -1,3 +1,5 @@
+# v0.2.14 - 2020-08-20
+- Version bump from ```0.2.13``` to ```0.2.14```
 # v0.2.13 - 2020-04-07
 - Addressed minimist vulnerability
   ```
