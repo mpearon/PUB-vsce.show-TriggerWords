@@ -1,3 +1,6 @@
+# v0.2.15 - 2021-04-12
+- version bump from ```0.2.14``` to ```0.2.15```
+- Merged dependabot vulnerability
 # v0.2.14 - 2020-08-20
 - Version bump from ```0.2.13``` to ```0.2.14```
 # v0.2.13 - 2020-04-07
