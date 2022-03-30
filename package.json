@@ -145,7 +145,7 @@
 		"@types/node": "^12.12.34",
 		"@types/vscode": "^1.43.0",
 		"glob": "^7.1.5",
-		"minimist": "^1.2.5",
+		"minimist": "^1.2.6",
 		"mocha": "^6.2.3",
 		"tslint": "^5.20.0",
 		"typescript": "^3.8.3",
