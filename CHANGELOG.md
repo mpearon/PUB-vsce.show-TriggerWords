@@ -1,3 +1,7 @@
+# v0.2.17 - 2021-03-31
+- version bump from ```0.2.16``` to ```0.2.17```
+- Merged dependabot vulnerability
+- Updated CHANGELOG
 # v0.2.16 - 2021-06-18
 - version bump from ```0.2.15``` to ```0.2.16```
 - Merged dependabot vulnerability
