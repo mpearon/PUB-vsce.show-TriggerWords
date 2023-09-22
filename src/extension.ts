@@ -10,31 +10,46 @@ export function getColorSettings(){
 	// Define the color options - will be moved to a separate file and be accessible via contributions 
 	const color1Word = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.matchColor, color: 'black', fontWeight: 'bolder' };
 	const color1Line = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.matchColor+'30', isWholeLine: true };
+	const color1Gutter = { overviewRulerColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.matchColor+'30' };
+
 	const color2Word = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.matchColor, color: 'black', fontWeight: 'bolder' };
 	const color2Line = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.matchColor+'30', isWholeLine: true };
+	const color2Gutter = { overviewRulerColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.matchColor+'30' };
+
 	const color3Word = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.matchColor, color: 'black', fontWeight: 'bolder' };
 	const color3Line = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.matchColor+'30', isWholeLine: true };
+	const color3Gutter = { overviewRulerColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.matchColor+'30' };
+
 	const color4Word = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.matchColor, color: 'black', fontWeight: 'bolder' };
 	const color4Line = { backgroundColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.matchColor+'30', isWholeLine: true };
+	const color4Gutter = { overviewRulerColor: workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.matchColor+'30' };
 
 	// Build the decorationTypes
 	const color1LineType = window.createTextEditorDecorationType(color1Line);
 	const color1WordType = window.createTextEditorDecorationType(color1Word);
+	const color1GutterType = window.createTextEditorDecorationType(color1Gutter);
 	
 	const color2LineType = window.createTextEditorDecorationType(color2Line);
 	const color2WordType = window.createTextEditorDecorationType(color2Word);
+	const color2GutterType = window.createTextEditorDecorationType(color2Gutter);
 
 	const color3LineType = window.createTextEditorDecorationType(color3Line);
 	const color3WordType = window.createTextEditorDecorationType(color3Word);
+	const color3GutterType = window.createTextEditorDecorationType(color3Gutter);
 	
 	const color4LineType = window.createTextEditorDecorationType(color4Line);
 	const color4WordType = window.createTextEditorDecorationType(color4Word);
+	const color4GutterType = window.createTextEditorDecorationType(color4Gutter);
 
 	return {
 		color1LineType,
 		color2LineType,
 		color3LineType,
 		color4LineType,
+		color1GutterType,
+		color2GutterType,
+		color3GutterType,
+		color4GutterType,
 		color1WordType,
 		color2WordType,
 		color3WordType,
@@ -52,12 +67,16 @@ export function activate(context: ExtensionContext) {
 	function clearDecorations(){
 		colors.color1LineType.dispose()
 		colors.color1WordType.dispose()
+		colors.color1GutterType.dispose()
 		colors.color2LineType.dispose()
 		colors.color2WordType.dispose()
+		colors.color2GutterType.dispose()
 		colors.color3LineType.dispose()
 		colors.color3WordType.dispose()
+		colors.color3GutterType.dispose()
 		colors.color4LineType.dispose()
 		colors.color4WordType.dispose()
+		colors.color4GutterType.dispose()
 	}
 	// Decoration update function
 	let updateDecorations = function (bypassLanguageCheck = false, updateColors = false) {
@@ -127,30 +146,43 @@ export function activate(context: ExtensionContext) {
 				continue;
 			};
 
+			//Update Highlight Gutter
+			let optionGutterRanges = [];
+			let optionGutter;
+			while( optionGutter = optionWordExpression.exec(editorText)) {
+				let gutterRange = window.activeTextEditor!.document
+				optionGutterRanges.push(gutterRange);
+			};
+			
+
 			// Apply the correct decorations based on the option's decoration value
 			switch(option.decoration){
 				case 'color1'	:	{
 					if(workspace.getConfiguration('vsce-show-triggerwords').highlighting.match1.enabled === true){
 						window.activeTextEditor!.setDecorations(colors.color1LineType, optionLineRanges);
 						window.activeTextEditor!.setDecorations(colors.color1WordType, optionWordRanges);
+						window.activeTextEditor!.setDecorations(colors.color1GutterType, optionGutterRanges);
 					};
 				};
 				case 'color2'	:	{
 					if(workspace.getConfiguration('vsce-show-triggerwords').highlighting.match2.enabled === true){
 						window.activeTextEditor!.setDecorations(colors.color2LineType, optionLineRanges);
 						window.activeTextEditor!.setDecorations(colors.color2WordType, optionWordRanges);
+						window.activeTextEditor!.setDecorations(colors.color2GutterType, optionGutterRanges);
 					};
 				};
 				case 'color3'	:	{
 					if(workspace.getConfiguration('vsce-show-triggerwords').highlighting.match3.enabled === true){
 						window.activeTextEditor!.setDecorations(colors.color3LineType, optionLineRanges);
 						window.activeTextEditor!.setDecorations(colors.color3WordType, optionWordRanges);
+						window.activeTextEditor!.setDecorations(colors.color3GutterType, optionGutterRanges);
 					};
 				};
 				case 'color4'	:	{
 					if(workspace.getConfiguration('vsce-show-triggerwords').highlighting.match4.enabled === true){
 						window.activeTextEditor!.setDecorations(colors.color4LineType, optionLineRanges);
 						window.activeTextEditor!.setDecorations(colors.color4WordType, optionWordRanges);
+						window.activeTextEditor!.setDecorations(colors.color4GutterType, optionGutterRanges);
 					};
 				};
 			}
