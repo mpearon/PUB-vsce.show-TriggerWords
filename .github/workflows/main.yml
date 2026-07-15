@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: read
+
 jobs:
   call_public_vsce_build_action:
     uses: mpearon/public-workflows/.github/workflows/vsce-extension-BuildPublish.yml@main
