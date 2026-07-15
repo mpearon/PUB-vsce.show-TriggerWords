@@ -3,6 +3,8 @@ on:
     branches:
       - master
 name: Deploy vsCode Extension
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
